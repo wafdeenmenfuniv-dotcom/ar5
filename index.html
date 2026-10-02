@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اختبار التنوع في الأساليب والتقنيات للعمل النسجي</title>
+<style>
+:root{--p:#6c3fd5;--p2:#9a6cff;--ink:#182235;--muted:#667085;--bg:#f5f7fb;--card:#fff;--border:#e5e8f0;--ok:#16845b;--okbg:#eaf8f1;--bad:#c53d4d;--badbg:#fff0f2}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 5% 0%,#eee7ff,transparent 28%),var(--bg);font-family:"Tahoma","Segoe UI",Arial,sans-serif;color:var(--ink)}
+.wrap{max-width:980px;margin:auto;padding:25px 15px 50px}.hero{color:white;background:linear-gradient(135deg,#5728ae,#9061f5);border-radius:28px;padding:34px 28px;box-shadow:0 15px 45px #2222;margin-bottom:18px}.hero h1{margin:0 0 9px;font-size:clamp(25px,4vw,38px);line-height:1.4}.hero p{margin:0;line-height:1.9;color:#eee8ff}.tag{display:inline-block;background:#fff2;padding:7px 13px;border:1px solid #fff3;border-radius:99px;margin-bottom:12px;font-size:13px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:25px;box-shadow:0 10px 35px #17203312;margin-bottom:17px}
+.student-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field label{display:block;font-weight:800;margin-bottom:7px}.field input{width:100%;padding:14px;border:1px solid #d8deea;border-radius:12px;font:inherit;outline:none;background:#fbfcfe}.field input:focus{border-color:var(--p2);box-shadow:0 0 0 4px #9061f51c}
+.note{margin-top:16px;padding:13px 15px;background:#f7f4ff;border:1px solid #e6dcff;border-radius:13px;line-height:1.9;color:#4d3a83}
+.actions{display:flex;justify-content:space-between;gap:12px;margin-top:20px;flex-wrap:wrap}button{border:0;border-radius:12px;padding:13px 20px;font:800 16px inherit;cursor:pointer}.primary{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff}.secondary{background:#edf0f6;color:#344054}button:disabled{opacity:.45;cursor:not-allowed}
+#quiz,#result{display:none}.progress-info{display:flex;justify-content:space-between;color:var(--muted);font-size:14px;margin-bottom:8px}.progress{height:9px;background:#edf0f5;border-radius:99px;overflow:hidden}.bar{height:100%;background:linear-gradient(90deg,var(--p),var(--p2));width:0;transition:.3s}
+.qnum{color:var(--p);font-weight:900;margin:20px 0 7px}.question{font-size:22px;line-height:1.75;margin:0 0 18px}.options{display:grid;gap:11px}.option{display:flex;gap:11px;align-items:flex-start;padding:15px;border:2px solid var(--border);border-radius:14px;background:#fbfcfe;cursor:pointer;transition:.2s;line-height:1.75}.option:hover{border-color:#cfc1f7}.option input{margin-top:5px;accent-color:var(--p);transform:scale(1.15)}.option.correct{border-color:var(--ok);background:var(--okbg)}.option.wrong{border-color:var(--bad);background:var(--badbg)}.option.disabled{cursor:default}
+.feedback{display:none;margin-top:16px;padding:15px;border-radius:14px;line-height:1.9}.feedback.show{display:block}.feedback.correct{background:var(--okbg);border:1px solid #bce7d2;color:#125d43}.feedback.wrong{background:var(--badbg);border:1px solid #f1c0c7;color:#8d2635}
+.result{text-align:center}.circle{width:150px;height:150px;border-radius:50%;margin:0 auto 17px;background:#f0eaff;border:10px solid #d9cbff;display:flex;flex-direction:column;justify-content:center}.circle .n{font-size:40px;font-weight:900;color:var(--p)}.circle small{color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.stat{border:1px solid var(--border);border-radius:13px;padding:14px;background:#fafbfe}.stat b{display:block;font-size:24px;color:var(--p)}.stat span{font-size:13px;color:var(--muted)}
+.review{text-align:right;border-top:1px solid var(--border);padding-top:18px}.review-item{padding:13px 15px;border:1px solid var(--border);border-radius:12px;margin:8px 0;line-height:1.85}.review-item.ok{border-right:5px solid var(--ok)}.review-item.bad{border-right:5px solid var(--bad)}.small{font-size:13px;color:var(--muted)}.footer{text-align:center;color:#8b95a8;font-size:12px;line-height:1.8}
+@media(max-width:700px){.student-grid,.stats{grid-template-columns:1fr}.card{padding:19px}.hero{padding:28px 20px}.question{font-size:19px}.actions button{width:100%}}
+@media print{.hero,.student-card,.actions,.footer{display:none!important}.card{box-shadow:none;border:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+  <span class="tag">نسيج يدوي (2) — الفرقة الثالثة / تربية فنية</span>
+  <h1>اختبار التنوع في الأساليب والتقنيات للعمل النسجي</h1>
+  <p>15 سؤالًا تفاعليًا من محتوى الفصل الثاني، مع تغذية راجعة فورية ونتيجة نهائية.</p>
+</section>
+
+<section class="card student-card" id="studentCard">
+  <h2 style="margin-top:0">بيانات الطالب</h2>
+  <p style="color:#667085;line-height:1.8">اكتب اسم الطالب والرقم الأكاديمي قبل بدء الاختبار.</p>
+  <div class="student-grid">
+    <div class="field"><label>اسم الطالب *</label><input id="name" placeholder="اكتب الاسم بالكامل"></div>
+    <div class="field"><label>الرقم الأكاديمي *</label><input id="id" inputmode="numeric" placeholder="اكتب الرقم الأكاديمي"></div>
+  </div>
+  <div class="note"><strong>طريقة الاختبار:</strong> اختر إجابة واحدة. ستظهر التغذية الراجعة مباشرة، ثم انتقل إلى السؤال التالي. البيانات لا تُرسل إلى أي خادم.</div>
+  <div class="actions"><span></span><button class="primary" id="start">بدء الاختبار</button></div>
+</section>
+
+<section class="card" id="quiz">
+  <div class="progress-info"><span id="pt">السؤال 1 من 15</span><span id="live">الدرجة: 0</span></div>
+  <div class="progress"><div class="bar" id="bar"></div></div>
+  <div class="qnum" id="qn"></div><h2 class="question" id="qt"></h2>
+  <div class="options" id="opts"></div><div class="feedback" id="fb"></div>
+  <div class="actions"><button class="secondary" id="prev">السؤال السابق</button><button class="primary" id="next" disabled>السؤال التالي</button></div>
+</section>
+
+<section class="card" id="result">
+  <div class="result">
+    <div class="circle"><div class="n" id="score">0</div><small>من 15</small></div>
+    <h2 id="title">تم إنهاء الاختبار</h2><p id="message"></p>
+    <div class="stats">
+      <div class="stat"><b id="correct">0</b><span>إجابات صحيحة</span></div>
+      <div class="stat"><b id="wrong">0</b><span>إجابات غير صحيحة</span></div>
+      <div class="stat"><b id="percent">0%</b><span>النسبة المئوية</span></div>
+    </div>
+  </div>
+  <div class="review"><h3>مراجعة الإجابات</h3><div id="reviewList"></div></div>
+  <div class="actions"><button class="secondary" id="print">طباعة النتيجة</button><button class="primary" id="restart">إعادة الاختبار</button></div>
+</section>
+
+<div class="footer">اختبار مستقل يعمل بالكامل داخل المتصفح، ومناسب للرفع على GitHub Pages. الأسئلة مبنية على محتوى الملف المرفق.</div>
+</div>
+
+<script>
+const qs=[
+{q:"ما الأهداف الأساسية للفصل الثاني كما وردت في بدايته؟",o:["دراسة الرسم والتصوير فقط","التعرف على التقنيات والأساليب التقليدية والجديدة والمستحدثة وأهم الفنانين المعاصرين","دراسة الخامات فقط","دراسة تاريخ العمارة فقط"],a:1,f:"الإجابة الصحيحة: التعرف على التقنيات والأساليب التقليدية والجديدة والمستحدثة، والتعرف على أهم الفنانين المعاصرين الذين ابتكروا في تنوع التقنيات والأساليب النسجية. ورد ذلك في صفحة 72."},
+{q:"ما الخامة/الأسلوب الظاهر في المثال الأول من تطبيقات الفصل في الصفحة 73؟",o:["معلقات نسجية بالحبال وتفريعاتها الملفوف عليها خيوط الصوف الملون","منسوجات من الألومنيوم","نسيج بالأسلاك المعدنية فقط","تطريز على الجلد"],a:0,f:"الإجابة الصحيحة: معلقات نسجية بالحبال وتفريعاتها الملفوف عليها خيوط الصوف الملون. صفحة 73."},
+{q:"ما التقنية التي تعتمد عليها لورا بومان بصورة أساسية في بناء مفروشاتها النحتية؟",o:["الطباعة الرقمية","تقنية العقد/المكرامية مع التكرار والتلاعب بالعقدة","النسيج الآلي فقط","الحفر على الخشب"],a:1,f:"الإجابة الصحيحة: تقنية العقد/المكرامية؛ فهي تأخذ عقدة مكرامية بسيطة وتكررها وتتلاعب بها لإنشاء الشكل والتصميم المطلوب. الصفحتان 74 وما يليهما."},
+{q:"ما الذي يميز مفروشات لورا بومان النحتية وفق المادة؟",o:["تحويل الخيوط والغزل البسيط إلى أعمال ثلاثية الأبعاد تهتم باللون والملمس والحركة","الاعتماد على لون واحد فقط","استخدام المعادن دون خيوط","إنتاج لوحات مسطحة فقط"],a:0,f:"الإجابة الصحيحة: تحويل الخيوط والغزل إلى أعمال ثلاثية الأبعاد، مع توجيه العمل نحو نتائج مرتبطة باللون والملمس والحركة. صفحة 74."},
+{q:"ما المواد البسيطة التي تستخدمها كاثرين لاتسون في بناء أعمالها؟",o:["التطريز والخيط والأسلاك","الخشب والزجاج فقط","الطين والرخام فقط","الورق والكرتون فقط"],a:0,f:"الإجابة الصحيحة: التطريز والخيط والأسلاك. وعلى الرغم من بساطة المواد فإن البناء معقد ويستلزم آلاف القطع وساعات من العمل. صفحة 80."},
+{q:"بماذا تستلهم كاثرين لاتسون أعمالها وفق الملف؟",o:["بالطبيعة والكائنات الحية وما يظهر منها عبر المجهر وكائنات تطفو على سطح البحر","بالهندسة المعمارية فقط","بالأشكال الهندسية المجردة فقط","بالفنون الشعبية فقط"],a:0,f:"الإجابة الصحيحة: بالطبيعة، بما فيها الكائنات الحية التي تُرى عبر المجهر والكائنات التي تطفو على سطح البحر. الصفحتان 80–81."},
+{q:"ما نوع العمل الذي يميز شيلا هيكس في المادة التعليمية؟",o:["العمل مع الألياف وتطوير ممارسات نسيجية عرضت في معارض دولية","الرسم الزيتي فقط","النحت البرونزي فقط","التصوير الفوتوغرافي فقط"],a:0,f:"الإجابة الصحيحة: العمل مع الألياف وتطوير ممارسات نسيجية؛ وتذكر المادة ورشًا وأعمالًا ومعارض دولية لشيلا هيكس. صفحة 85."},
+{q:"كيف تصف المادة ممارسة ديمي ميكسون الفنية؟",o:["تدمج تقنيات المكرامية والنسيج التقليدية مع مواد عضوية وغير عضوية في أشكال ثلاثية الأبعاد","تستخدم التصوير فقط","تعتمد على النسيج المسطح التقليدي فقط","تستخدم الخشب دون ألياف"],a:0,f:"الإجابة الصحيحة: تجمع بين تقنيات المكرامية والنسيج التقليدية ومواد عضوية وغير عضوية في أشكال ثلاثية الأبعاد تستكشف التوتر بين القوة والنعومة. الصفحتان 88–89."},
+{q:"ما التحول الذي ذكرته المادة في ممارسة ديمي ميكسون بخصوص الخيوط؟",o:["استبدلت خيوط الجوت السبعينية بخيوط القطن الأكثر نعومة","استبدلت القطن بالأسلاك المعدنية","استبدلت الصوف بالألومنيوم","استبدلت المكرامية بالتصوير"],a:0,f:"الإجابة الصحيحة: استبدلت خيوط الجوت السبعينية بخيوط القطن الأكثر نعومة، ثم واصلت تطوير تصميم المكرامية وتجربة الألوان. صفحة 88."},
+{q:"ما الخامة الأساسية التي تستخدمها غلوريا ماكروبرتس في منحوتاتها الليفية؟",o:["الصوف الطبيعي غير المصبوغ","الألومنيوم","الزجاج","الجلد الصناعي"],a:0,f:"الإجابة الصحيحة: الصوف الطبيعي غير المصبوغ. وتستخدم الألياف الطبيعية كوسيلة نحت لتقديم تفسير لعجائب الكون والطبيعة. صفحة 92."},
+{q:"ما العنصر الهيكلي الذي تستعين به غلوريا ماكروبرتس في بعض أعمالها لربط الفن بالطبيعة؟",o:["أغصان الأشجار","قطع الزجاج","الأسلاك النحاسية","الألواح المعدنية"],a:0,f:"الإجابة الصحيحة: أغصان الأشجار؛ إذ يذكر الملف العنصر الهيكلي لأغصان الأشجار في أعمالها، مع المناظر الطبيعية المصنوعة من الصوف. صفحة 92."},
+{q:"ما الوسيط الذي تستخدمه جانينا ميلو لانديني في أعمال Ciclotramas؟",o:["الحبل المفكك","الحرير فقط","الورق المطبوع","الطين"],a:0,f:"الإجابة الصحيحة: الحبل المفكك. تحول جانينا الحبل إلى تكوينات مستوحاة من الفروع والشبكات، ضمن سلسلة Ciclotramas. الصفحتان 98–99."},
+{q:"كيف تُنشئ جانينا ميلو لانديني الشبكات المعقدة في أعمال Ciclotramas؟",o:["بفك أقسام من الحبل الملتوي بدقة لتكوين فروع متشابكة","بصب المعدن في قوالب","بقص الورق ولصقه","باستخدام ماكينة تطريز آلية فقط"],a:0,f:"الإجابة الصحيحة: تفك أقسامًا معينة من الحبل الملتوي بدقة، فتتكون شبكة من الفروع المتشابكة التي تلتف وتدور. صفحة 98."},
+{q:"ما الأسلوب الذي استخدمه مايكل ف. رود لإنتاج منسوجات FACE ذات الوجوه المنقطة؟",o:["يقص صور الوجوه في Photoshop ويقللها إلى عرض منخفض بالبكسل، ثم ينسجها يدويًا بخيوط مصبوغة لتطابق الألوان","يحول الصور إلى منحوتات خزفية","يطبع الصور على القماش دون نسيج","يستخدم الرسم الزيتي فقط"],a:0,f:"الإجابة الصحيحة: يستخدم تقنيات رقمية ويدوية؛ يقص صور الوجوه في Photoshop ويقللها إلى عرض منخفض بالبكسل، ثم يسترشد بالنسخة شديدة البكسلة في النسيج اليدوي باستخدام خيوط مصبوغة لتناسب ألوان الصورة. ورد ذلك في صفحات الفنان مايكل ف. رود، ومنها صفحة 122."},
+{q:"أي عبارة تلخص اتجاه الفصل الثاني في تنوع الأساليب والتقنيات؟",o:["العمل النسجي يظل محصورًا في أسلوب واحد","يمكن تطوير العمل النسجي عبر تنويع التقنيات والأساليب ودمج الممارسات اليدوية والتجريبية والرقمية","التقنيات الجديدة تلغي التقنيات التقليدية تمامًا","الفن النسجي لا يمكن أن يتحول إلى أعمال ثلاثية الأبعاد"],a:1,f:"الإجابة الصحيحة: الفصل يعرض تنوعًا في التقنيات والأساليب، من العقد والمكرامية والحبال والخيوط إلى التراكيب متعددة الأسطح، ثم نماذج تجمع التقنيات اليدوية مع الأدوات الرقمية، كما يظهر في أهداف الفصل وأمثلة الفنانين."}
+];
+
+let cur=0, ans=Array(qs.length).fill(null);
+const $=x=>document.getElementById(x);
+function scoreNow(){return ans.filter((x,i)=>x===qs[i].a).length}
+function render(){
+ let x=qs[cur]; $("qn").textContent="السؤال "+(cur+1);$("qt").textContent=x.q;
+ $("pt").textContent=`السؤال ${cur+1} من ${qs.length}`;$("live").textContent=`الدرجة: ${scoreNow()}`;
+ $("bar").style.width=((cur+1)/qs.length*100)+"%";
+ let box=$("opts");box.innerHTML="";
+ x.o.forEach((t,i)=>{let l=document.createElement("label");l.className="option";l.innerHTML=`<input type="radio" name="op" value="${i}"><span>${t}</span>`;l.onclick=()=>choose(i);box.appendChild(l)});
+ $("fb").className="feedback";$("fb").innerHTML="";$("next").disabled=true;$("prev").disabled=cur===0;
+ if(ans[cur]!==null) show(ans[cur]);$("next").textContent=cur===qs.length-1?"إنهاء الاختبار":"السؤال التالي";
+}
+function choose(i){if(ans[cur]!==null)return;ans[cur]=i;show(i)}
+function show(i){
+ let x=qs[cur];[...document.querySelectorAll(".option")].forEach((l,n)=>{l.classList.add("disabled");l.querySelector("input").disabled=true;if(n===x.a)l.classList.add("correct");if(n===i&&i!==x.a)l.classList.add("wrong")});
+ let ok=i===x.a;$("fb").className="feedback show "+(ok?"correct":"wrong");$("fb").innerHTML=`<strong>${ok?"✓ إجابة صحيحة":"✗ إجابة غير صحيحة"}</strong>${x.f}`;$("next").disabled=false;$("live").textContent=`الدرجة: ${scoreNow()}`;
+}
+$("start").onclick=()=>{if(!$("name").value.trim()||!$("id").value.trim()){alert("من فضلك اكتب اسم الطالب والرقم الأكاديمي أولًا.");return} $("studentCard").style.display="none";$("quiz").style.display="block";render();scrollTo({top:0,behavior:"smooth"})};
+$("next").onclick=()=>{if(ans[cur]===null)return;if(cur<qs.length-1){cur++;render();scrollTo({top:0,behavior:"smooth"})}else finish()};
+$("prev").onclick=()=>{if(cur>0){cur--;render();scrollTo({top:0,behavior:"smooth"})}};
+function finish(){
+ $("quiz").style.display="none";$("result").style.display="block";
+ let c=scoreNow(),w=qs.length-c,p=Math.round(c/qs.length*100);$("score").textContent=c;$("correct").textContent=c;$("wrong").textContent=w;$("percent").textContent=p+"%";
+ let n=$("name").value.trim();$("title").textContent=n?`تم إنهاء الاختبار يا ${n}`:"تم إنهاء الاختبار";
+ $("message").textContent=p>=90?"أداء مرتفع في موضوعات الفصل.":p>=75?"فهم جيد مع بعض النقاط التي يمكن مراجعتها.":p>=60?"يوجد أساس مناسب، ويُنصح بمراجعة أمثلة الفنانين والتقنيات.":"يُنصح بإعادة مراجعة الفصل والتغذية الراجعة ثم إعادة الاختبار.";
+ let r=$("reviewList");r.innerHTML="";qs.forEach((x,i)=>{let ok=ans[i]===x.a,d=document.createElement("div");d.className="review-item "+(ok?"ok":"bad");d.innerHTML=`<strong>${i+1}. ${x.q}</strong><br>${ok?"إجابتك صحيحة.":"إجابتك: "+(ans[i]===null?"لم تتم الإجابة":x.o[ans[i]])+"<br>الإجابة الصحيحة: "+x.o[x.a]}<div class="small">${x.f}</div>`;r.appendChild(d)});scrollTo({top:0,behavior:"smooth"});
+}
+$("restart").onclick=()=>{ans=Array(qs.length).fill(null);cur=0;$("result").style.display="none";$("studentCard").style.display="block";$("name").focus();scrollTo({top:0,behavior:"smooth"})};
+$("print").onclick=()=>print();
+</script>
+</body>
+</html>
